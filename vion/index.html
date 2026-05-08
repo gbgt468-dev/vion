@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VION — кинотеатр без рекламы</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="header">
+        <div class="logo">VION<span>.</span></div>
+        <div class="search-box">
+            <input type="text" id="searchInput" placeholder="Поиск: Сопрано, Во все тяжкие, Дюна...">
+        </div>
+        <div class="nav-links">
+            <a class="nav-link active" data-category="all">Все</a>
+            <a class="nav-link" data-category="movie">Фильмы</a>
+            <a class="nav-link" data-category="series">Сериалы</a>
+            <a class="nav-link" data-category="top">Топ-250</a>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="section-title" id="dynamicTitle">🔥 Сегодня в VION</div>
+        <div id="moviesContainer" class="movies-grid"></div>
+    </div>
+
+    <footer>VION • Бесплатно • Без рекламы • Вся русская озвучка</footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VION — просмотр</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .player-container { max-width: 1200px; margin: 0 auto; padding: 20px; }
+        video { width: 100%; border-radius: 16px; background: #000; }
+        .back-btn { display: inline-block; margin: 20px 0; color: #e50914; text-decoration: none; font-weight: bold; }
+        .audio-panel { margin-top: 20px; display: flex; gap: 12px; flex-wrap: wrap; }
+        .audio-btn { background: #1e293b; border: none; color: white; padding: 8px 20px; border-radius: 40px; cursor: pointer; }
+        .audio-btn.active { background: #e50914; }
+        .movie-title { font-size: 28px; margin: 20px 0 10px; }
+    </style>
+</head>
+<body>
+    <div class="header" style="padding: 12px 32px;">
+        <div class="logo">VION<span>.</span></div>
+        <a href="index.html" class="back-btn">← На главную</a>
+    </div>
+    <div class="player-container">
+        <h1 class="movie-title" id="movieTitle"></h1>
+        <video id="mainVideo" controls autoplay></video>
+        <div class="audio-panel" id="audioPanel"></div>
+    </div>
+    <script>
+        const urlParams = new URLSearchParams(window.location.search);
+        const movieId = urlParams.get('id');
+        
+        fetch('movies.json')
+            .then(res => res.json())
+            .then(movies => {
+                const movie = movies.find(m => m.id == movieId);
+                if (!movie) {
+                    document.getElementById('movieTitle').innerText = 'Фильм не найден';
+                    return;
+                }
+                document.getElementById('movieTitle').innerText = `${movie.title} (${movie.year})`;
+                const video = document.getElementById('mainVideo');
+                video.src = movie.videoUrl;
+                
+                const panel = document.getElementById('audioPanel');
+                if (movie.ruTracks && movie.ruTracks.length) {
+                    panel.innerHTML = movie.ruTracks.map((track, idx) => 
+                        `<button class="audio-btn" data-track="${idx}">${track}</button>`
+                    ).join('');
+                    document.querySelectorAll('.audio-btn').forEach(btn => {
+                        btn.addEventListener('click', (e) => {
+                            document.querySelectorAll('.audio-btn').forEach(b => b.classList.remove('active'));
+                            btn.classList.add('active');
+                            // Реальное переключение для HLS/M3U8 — здесь демо-режим
+                            console.log(`Озвучка: ${movie.ruTracks[btn.getAttribute('data-track')]}`);
+                        });
+                    });
+                    if (panel.firstChild) panel.firstChild.classList.add('active');
+                } else {
+                    panel.innerHTML = '<div>🇷🇺 Русская озвучка встроена</div>';
+                }
+            });
+    </script>
+</body>
+</html>

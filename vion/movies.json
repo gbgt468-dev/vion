@@ -1,0 +1,52 @@
+[
+    {
+        "id": 1,
+        "title": "Клан Сопрано",
+        "year": "1999-2007",
+        "type": "series",
+        "rating": 9.2,
+        "poster": "https://image.tmdb.org/t/p/w500/kx3t1WqEpnJz6qOkO4sEJheMvvC.jpg",
+        "videoUrl": "https://bitdash-a.akamaihd.net/content/sintel/hls/playlist.m3u8",
+        "ruTracks": ["LostFilm (проф)", "НТВ+ дубляж"]
+    },
+    {
+        "id": 2,
+        "title": "Во все тяжкие",
+        "year": "2008-2013",
+        "type": "series",
+        "rating": 9.5,
+        "poster": "https://image.tmdb.org/t/p/w500/ggFHVNu6YYI5L9pCfOacjizRGt.jpg",
+        "videoUrl": "https://test-streams.mux.dev/x36xhzz/x36xhzz.m3u8",
+        "ruTracks": ["Кураж-Бамбей", "AlexFilm"]
+    },
+    {
+        "id": 3,
+        "title": "Дюна: Часть вторая",
+        "year": 2024,
+        "type": "movie",
+        "rating": 8.7,
+        "poster": "https://image.tmdb.org/t/p/w500/8b8R8l88Qje9dnbOE6PYpJZNc.jpg",
+        "videoUrl": "https://bitdash-a.akamaihd.net/content/sintel/hls/playlist.m3u8",
+        "ruTracks": ["Дубляж Jaskier", "Профессиональный"]
+    },
+    {
+        "id": 4,
+        "title": "Оппенгеймер",
+        "year": 2023,
+        "type": "movie",
+        "rating": 8.9,
+        "poster": "https://image.tmdb.org/t/p/w500/8Gxv8gSFCU0XGDykEGv7zR1n2ua.jpg",
+        "videoUrl": "https://test-streams.mux.dev/x36xhzz/x36xhzz.m3u8",
+        "ruTracks": ["Дублированный", "Одноголосый"]
+    },
+    {
+        "id": 5,
+        "title": "Игра престолов",
+        "year": "2011-2019",
+        "type": "series",
+        "rating": 9.3,
+        "poster": "https://image.tmdb.org/t/p/w500/7WsyChQLEftFiDOVTGkv3hFpyyt.jpg",
+        "videoUrl": "https://bitdash-a.akamaihd.net/content/sintel/hls/playlist.m3u8",
+        "ruTracks": ["LostFilm", "Новамедиа"]
+    }
+]
